@@ -1,5 +1,14 @@
 <div>
-  <input type="file" (change)="onFileSelected($event)" accept="image/*">
-  <button (click)="uploadImage()">Cargar imagen</button>
-  <img *ngIf="imageUrl" [src]="imageUrl" alt="Imagen">
+  <div *ngIf="!imageUrl">
+    <input type="file" (change)="onFileSelected($event)" accept="image/*" />
+    <button (click)="uploadImage()">Cargar imagen</button>
+  </div>
+  <div>
+    <img *ngIf="imageUrl" [src]="imageUrl" alt="Imagen" class="img" />
+  </div>
+  <div *ngIf="imageUrl">
+    <h2>Este es el enlace de tu imagen</h2>
+    <h5 #imageUrlValue>{{ imageUrl }}</h5>
+    <i class="bi bi-clipboard" (click)="copyToClipboard()" class="iconCopy"></i>
+  </div>
 </div>
