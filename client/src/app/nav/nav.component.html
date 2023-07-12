@@ -6,13 +6,13 @@
       </div>
       <div>
         <i
-          *ngIf="!themeLocal"
+          *ngIf="themeLocal"
           class="bi bi-moon-stars iconRed iconTheme"
           (click)="toggleTheme()"
         ></i>
 
         <i
-          *ngIf="themeLocal"
+          *ngIf="!themeLocal"
           class="bi bi-brightness-high-fill iconRed iconTheme"
           (click)="toggleTheme()"
         ></i>

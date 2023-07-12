@@ -3,7 +3,7 @@ import { BehaviorSubject } from 'rxjs';
 
 @Injectable({ providedIn: 'root' })
 export class ThemeService {
-  private themeSubject = new BehaviorSubject<string>('claro');
+  private themeSubject = new BehaviorSubject<string>('oscuro');
   public theme$ = this.themeSubject.asObservable();
 
   private lightTheme = {

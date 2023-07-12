@@ -7,16 +7,16 @@ import { ThemeService } from '../Services/Theme.service';
 })
 export class NavComponent {
   constructor(private themeService: ThemeService) { }
-  public themeLocal = false
+  public themeLocal: boolean | null = null
 
   toggleTheme() {
     this.themeService.toggleTheme();
     this.themeService.theme$.subscribe(theme => {
       if (theme === "claro") {
-        this.themeLocal = false;
+        this.themeLocal = true;
       }
       if (theme === "oscuro") {
-        this.themeLocal = true;
+        this.themeLocal = false;
       }
     });
   }

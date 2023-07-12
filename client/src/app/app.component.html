@@ -1,5 +1,9 @@
-<div>
-  <app-nav />
+
+<div [ngClass]="themeClass" class="bodyInAPP">
+  <app-nav
+    [ngClass]="themeClass"
+    style="width: 100%; z-index: 20"
+  />
   <app-home />
   <app-footer />
 </div>
