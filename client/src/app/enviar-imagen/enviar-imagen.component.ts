@@ -1,4 +1,4 @@
-import { Component, ViewChild, ElementRef  } from '@angular/core';
+import { Component, ViewChild, ElementRef } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 @Component({
@@ -40,15 +40,14 @@ export class EnviarImagenComponent {
   @ViewChild('imageUrlValue', { static: false })
   imageUrlValueRef!: ElementRef;
   
-  copyToClipboard(): void {
-    const imageUrlValue = this.imageUrlValueRef.nativeElement.innerText;
-    const textarea = document.createElement('textarea');
-    textarea.value = imageUrlValue;
-    document.body.appendChild(textarea);
-    textarea.select();
-    document.execCommand('copy');
-    document.body.removeChild(textarea);
+  copyToClipboard() {
+    if (this.imageUrl) {
+      const el = document.createElement('textarea');
+      el.value = this.imageUrl;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+    }
   }
-
-
 }

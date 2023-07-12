@@ -1,14 +1,26 @@
-<div>
-  <div *ngIf="!imageUrl">
-    <input type="file" (change)="onFileSelected($event)" accept="image/*" />
-    <button (click)="uploadImage()">Cargar imagen</button>
+<div class="contenedor">
+  <div *ngIf="!imageUrl" class="contenedor2">
+    <input
+      type="file"
+      (change)="onFileSelected($event)"
+      accept="image/*"
+      class="btn input"
+    />
+    <button (click)="uploadImage()" type="button" class="btn btn-primary input">
+      Cargar imagen
+    </button>
   </div>
   <div>
     <img *ngIf="imageUrl" [src]="imageUrl" alt="Imagen" class="img" />
   </div>
-  <div *ngIf="imageUrl">
+  <div *ngIf="imageUrl" class="datas">
     <h2>Este es el enlace de tu imagen</h2>
-    <h5 #imageUrlValue>{{ imageUrl }}</h5>
-    <i class="bi bi-clipboard" (click)="copyToClipboard()" class="iconCopy"></i>
+    <div class="contenedor3">
+      <a [href]="imageUrl" target="_blank">{{ imageUrl }}</a>
+      <div class="divinterno" (click)="copyToClipboard()">
+        <p>Copiar link:</p>
+        <i class="bi bi-clipboard iconCopy" (click)="copyToClipboard()"></i>
+      </div>
+    </div>
   </div>
 </div>
