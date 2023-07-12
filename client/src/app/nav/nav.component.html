@@ -1,16 +1,22 @@
-<div class="div">
-  <h3>Post Cloudinary</h3>
-  <div>
-    <i
-      *ngIf="!themeLocal"
-      class="bi bi-moon-stars iconRed iconTheme"
-      (click)="toggleTheme()"
-    ></i>
+<nav class="nav">
+  <div class="nav2">
+    <div class="links">
+      <div>
+        <h2>Post Cloudinary</h2>
+      </div>
+      <div>
+        <i
+          *ngIf="!themeLocal"
+          class="bi bi-moon-stars iconRed iconTheme"
+          (click)="toggleTheme()"
+        ></i>
 
-    <i
-      *ngIf="themeLocal"
-      class="bi bi-brightness-high-fill iconRed iconTheme"
-      (click)="toggleTheme()"
-    ></i>
+        <i
+          *ngIf="themeLocal"
+          class="bi bi-brightness-high-fill iconRed iconTheme"
+          (click)="toggleTheme()"
+        ></i>
+      </div>
+    </div>
   </div>
-</div>
+</nav>
