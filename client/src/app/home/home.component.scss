@@ -1,5 +1,5 @@
 .home {
-  height: calc(100vh - (44.25px + 96px));
+  height:85vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -9,4 +9,8 @@
 .contenedor {
   display: flex;
   flex-direction: column;
+  padding: 1rem
+}
+.input{
+  margin: 1rem;
 }

@@ -1,7 +1,17 @@
 <div class="home">
   <div *ngIf="!goUpload" class="contenedor">
-    <h2>Como funciona</h2>
-    <button type="button" class="btn btn-primary input" (click)="goUploadFile()">comenzar</button>
+    <h1 style="text-align: center">Como funciona?</h1>
+    <p style="text-align: center">
+      Puedes subir tu imagen y conseguir un link para consumierlo en tu pagina
+      web!
+    </p>
+    <button
+      type="button"
+      class="btn btn-primary input"
+      (click)="goUploadFile()"
+    >
+      comenzar
+    </button>
   </div>
   <div *ngIf="goUpload">
     <app-enviar-imagen></app-enviar-imagen>
