@@ -9,6 +9,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 @RestController
 @RequestMapping("/image")
+@CrossOrigin(origins = "https://post-cloudinary.vercel.app")
 public class ImageController {
 
     private final ImageService imageService;
@@ -32,5 +33,4 @@ public class ImageController {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error al cargar la imagen");
         }
     }
-    
 }
