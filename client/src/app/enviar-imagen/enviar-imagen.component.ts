@@ -21,9 +21,9 @@ export class EnviarImagenComponent {
   uploadImage(): void {
     if (this.fileToUpload) {
       const formData = new FormData();
-      formData.append('image', this.fileToUpload);
+      formData.append('file', this.fileToUpload);
 
-      this.http.post<any>('http://localhost:3001/uploadImage', formData).subscribe(
+      this.http.post<any>('http://localhost:8080/image', formData).subscribe(
         (response) => {
           const imageUrl = response.url;
           this.imageUrl = imageUrl;
@@ -39,7 +39,7 @@ export class EnviarImagenComponent {
 
   @ViewChild('imageUrlValue', { static: false })
   imageUrlValueRef!: ElementRef;
-  
+
   copyToClipboard() {
     if (this.imageUrl) {
       const el = document.createElement('textarea');
