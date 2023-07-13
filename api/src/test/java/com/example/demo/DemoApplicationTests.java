@@ -1,10 +1,10 @@
-package com.Nicovied0.PostCloudinary;
+package com.example.demo;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class PostCoudinaryApplicationTests {
+class DemoApplicationTests {
 
 	@Test
 	void contextLoads() {
