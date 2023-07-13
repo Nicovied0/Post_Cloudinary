@@ -23,9 +23,9 @@ export class EnviarImagenComponent {
       const formData = new FormData();
       formData.append('file', this.fileToUpload);
 
-      this.http.post<any>('http://localhost:8080/image', formData).subscribe(
+      this.http.post('http://localhost:8080/image', formData, { responseType: 'text' }).subscribe(
         (response) => {
-          const imageUrl = response.url;
+          const imageUrl = response; // La respuesta es una URL directa de la imagen
           this.imageUrl = imageUrl;
           console.log('Todo bien', response);
         },
@@ -33,9 +33,9 @@ export class EnviarImagenComponent {
           console.error('Error al cargar la imagen:', error);
         }
       );
-
     }
   }
+
 
   @ViewChild('imageUrlValue', { static: false })
   imageUrlValueRef!: ElementRef;
