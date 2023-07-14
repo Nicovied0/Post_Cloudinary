@@ -21,18 +21,20 @@ export class EnviarImagenComponent {
   uploadImage(): void {
     if (this.fileToUpload) {
       const formData = new FormData();
-      formData.append('file', this.fileToUpload);
+      formData.append('image', this.fileToUpload);
 
-      this.http.post('http://localhost:8080/image', formData, { responseType: 'text' }).subscribe(
+      this.http.post('https://back-post-cloudinary.vercel.app/uploadImage', formData, { responseType: 'text' }).subscribe(
         (response) => {
-          const imageUrl = response; // La respuesta es una URL directa de la imagen
+          const responseObject = JSON.parse(response); // Analiza la respuesta JSON en un objeto
+          const imageUrl = responseObject.url; // Obtiene la URL de la imagen del objeto de respuesta
           this.imageUrl = imageUrl;
-          console.log('Todo bien', response);
+          console.log('Todo bien', imageUrl);
         },
         (error) => {
           console.error('Error al cargar la imagen:', error);
         }
       );
+
     }
   }
 
