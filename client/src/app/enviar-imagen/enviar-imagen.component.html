@@ -1,11 +1,6 @@
 <div class="contenedor">
   <div *ngIf="!imageUrl" class="contenedor2">
-    <input
-      type="file"
-      (change)="onFileSelected($event)"
-      accept="image/*"
-      class="btn input"
-    />
+    <input type="file" (change)="onFileSelected($event)" accept="image/*" class="btn input" />
     <button (click)="uploadImage()" type="button" class="btn btn-primary input">
       Cargar imagen
     </button>
@@ -18,9 +13,12 @@
     <div class="contenedor3">
       <a [href]="imageUrl" target="_blank">{{ imageUrl }}</a>
       <div class="divinterno" (click)="copyToClipboard()">
-        <p>Copiar link:</p>
-        <i class="bi bi-clipboard iconCopy" (click)="copyToClipboard()"></i>
+        <p>Copiar enlace:</p>
+        <i class="bi bi-clipboard iconCopy"></i>
       </div>
+    </div>
+    <div class="alert alert-success" role="alert" *ngIf="showCopiedNotification">
+      ¡Enlace copiado!
     </div>
   </div>
 </div>

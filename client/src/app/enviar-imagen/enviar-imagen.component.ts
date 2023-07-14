@@ -10,7 +10,7 @@ export class EnviarImagenComponent {
 
   public imageUrl: string | undefined;
   public fileToUpload: File | undefined;
-
+  showCopiedNotification: boolean = false;
 
   constructor(private http: HttpClient) { }
 
@@ -39,6 +39,7 @@ export class EnviarImagenComponent {
   }
 
 
+
   @ViewChild('imageUrlValue', { static: false })
   imageUrlValueRef!: ElementRef;
 
@@ -50,6 +51,17 @@ export class EnviarImagenComponent {
       el.select();
       document.execCommand('copy');
       document.body.removeChild(el);
+      this.hideCopiedNotification()
     }
   }
+  hideCopiedNotification() {
+    console.log(this.showCopiedNotification);
+    this.showCopiedNotification = true;
+
+    setTimeout(() => {
+      this.showCopiedNotification = false;
+    }, 3000); // 3000 milisegundos = 3 segundos
+  }
+
+
 }
